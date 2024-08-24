@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(255, 255, 255);
+}
+
+/* rainbow color animation for the header*/
+@keyframes color-change {
+  0% { color: red; }
+  20% { color: yellow; }
+  40% { color: green; }
+  60% { color: blue; }
+  80% { color: purple; }
+  100% { color: red; }
+}
+
+.brand {
+  animation: color-change 2s infinite;
+  font-size: 70px;
+  text-align: center;
+  text-decoration: wavy;
+  margin-top: 8px;
+}
+
+/*creating the calculators grid*/
+
+.display {
+  grid-area: display;
+  align-content: center;
+  background-color: black;
+  border: 3px solid grey;
+}
+
+.clear {
+  grid-area: clear;
+  background-color: blue;
+  border: 3px solid grey;
+}
+
+.back {
+  grid-area: back;
+  background-color: blue;
+  border: 3px solid grey;
+}
+
+.numpad {
+  /* will be called again later to create the numpad on the calc itself*/
+  grid-area: numpad;
+  background-color: gray;
+  border: 3px solid grey;
+}
+
+.math {
+  grid-area: math;
+  background-color: grey;
+  border: 3px solid grey;
+}
+
+.calculator {
+  display: grid;
+  grid-template-rows: 1fr 2fr 2fr 2fr 2fr 2fr;
+  grid-template-areas:
+    "display display display display"
+    "clear clear back math"
+    "numpad numpad numpad math"
+    "numpad numpad numpad math"
+    "numpad numpad numpad math"
+    "numpad numpad numpad math";
+  margin-inline: auto;
+  height: 750px;
+  width: 500px;
+  border: 3px solid grey;
+}
+
+/*creating numpad*/
+
+.numpad {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  height: 24.9%;
+  width: 100%;
+}
+
+.number {
+  width: 100%;
+  background-color: darkgray;
+}
+
+.number:hover {
+  background-color: lightgray;
+}
+
+/*recalling the grid areas and adding the operations*/
+button {
+  font-size: 30px;
+}
+
+.displayText {
+  font-size: 40px;
+  text-align: right;
+  padding: 4px;
+  margin: auto;
+  color: white;
+}
+
+.clear {
+  font-size: 60px;
+  color: white;
+}
+
+.back {
+  font-size: 40px;
+  color: white;
+}
+
+.clear:hover,
+.back:hover {
+  background-color: rgb(86, 86, 255);
+}
+
+/* styling for operations and equals buttons*/
+.math {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.operation {
+  height: 19.9%;
+  background-color: tomato;
+}
+
+.operation:hover {
+  background-color: rgb(253, 150, 132);
+}
+
+/* personal sign off at the bottom of the page */
+.sign-off {
+    padding: 20px;
+    margin: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: darkgreen;
+}
