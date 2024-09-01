@@ -8,12 +8,24 @@ body {
 
 /* rainbow color animation for the header*/
 @keyframes color-change {
-  0% { color: red; }
-  20% { color: yellow; }
-  40% { color: green; }
-  60% { color: blue; }
-  80% { color: purple; }
-  100% { color: red; }
+  0% {
+    color: red;
+  }
+  20% {
+    color: yellow;
+  }
+  40% {
+    color: green;
+  }
+  60% {
+    color: blue;
+  }
+  80% {
+    color: purple;
+  }
+  100% {
+    color: red;
+  }
 }
 
 .brand {
@@ -22,6 +34,16 @@ body {
   text-align: center;
   text-decoration: wavy;
   margin-top: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand {
+    animation: color-change 20s infinite;
+    font-size: 70px;
+    text-align: center;
+    text-decoration: wavy;
+    margin-top: 8px;
+  }
 }
 
 /*creating the calculators grid*/
@@ -144,9 +166,9 @@ button {
 
 /* personal sign off at the bottom of the page */
 .sign-off {
-    padding: 20px;
-    margin: 30px;
-    text-align: center;
-    font-size: 12px;
-    color: darkgreen;
+  padding: 20px;
+  margin: 30px;
+  text-align: center;
+  font-size: 12px;
+  color: darkgreen;
 }
